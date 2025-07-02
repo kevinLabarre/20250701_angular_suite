@@ -1,0 +1,11 @@
+<section>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    @for(n of news ; track n.id){
+    <app-news-card [news]="n" />
+    } @empty {
+    <p>chargement ...</p> }
+  </div>
+
+</section>

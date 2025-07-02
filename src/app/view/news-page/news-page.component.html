@@ -1,1 +1,12 @@
-<p>news-page works!</p>
+<section>
+  <h1>Nos actualités</h1>
+  @if(news){
+  <app-news-list [news]="news" />
+  } @else if(errorMessage){
+  <p>si backend renvoie des messages d'erreurs directement affichable : {{errorMessage}}</p>
+  <p>sinon, message en dure : Erreur de chargement des données</p>
+  }
+  @else{
+  <p>chargement ...</p>
+  }
+</section>
