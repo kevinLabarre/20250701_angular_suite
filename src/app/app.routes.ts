@@ -4,6 +4,7 @@ import { NewsPageComponent } from './view/news-page/news-page.component';
 import { ActualiteDetailPageComponent } from './view/actualite-detail-page/actualite-detail-page.component';
 import { NewsDescriptionComponent } from './components/news-description/news-description.component';
 import { UpdateNewsComponent } from './components/update-news/update-news.component';
+import { SignalPageComponent } from './view/signal-page/signal-page.component';
 
 export const routes: Routes = [
   { path: "", component: HomePageComponent, title: "Accueil" },
@@ -18,6 +19,7 @@ export const routes: Routes = [
       { path: "update", redirectTo: "mise-a-jour" },
 
     ]
-  }
+  },
+  { path: 'signaux', component: SignalPageComponent, title: "Les signaux" }
 
 ];
