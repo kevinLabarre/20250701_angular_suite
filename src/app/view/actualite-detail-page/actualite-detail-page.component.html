@@ -1,4 +1,12 @@
 <section>
   <h1>Détails actualités</h1>
   <p>Paramètre de l'url : {{id}}</p>
+
+  <div class="pt-5">
+    <a routerLink="description" class="btn">Description</a>
+    <a routerLink="mise-a-jour" class="btn">Mise à jour</a>
+
+    <h2 class="pt-2">composant chargé par la routes enfant</h2>
+    <router-outlet />
+  </div>
 </section>

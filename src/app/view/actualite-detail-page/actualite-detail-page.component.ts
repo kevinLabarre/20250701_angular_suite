@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-actualite-detail-page',
-  imports: [],
+  imports: [RouterOutlet, RouterLink],
   templateUrl: './actualite-detail-page.component.html',
   styleUrl: './actualite-detail-page.component.css'
 })
