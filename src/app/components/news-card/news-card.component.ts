@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { News } from '../../interfaces/news.interface';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-news-card',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './news-card.component.html',
   styleUrl: './news-card.component.css'
 })
