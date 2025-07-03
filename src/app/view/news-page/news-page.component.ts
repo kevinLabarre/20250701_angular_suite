@@ -3,10 +3,11 @@ import { NewsService } from '../../services/news/news.service';
 import { News } from '../../interfaces/news.interface';
 import { lastValueFrom } from 'rxjs';
 import { NewsListComponent } from "../../components/news-list/news-list.component";
+import { NewsFormComponent } from "../../components/news-form/news-form.component";
 
 @Component({
   selector: 'app-news-page',
-  imports: [NewsListComponent],
+  imports: [NewsListComponent, NewsFormComponent],
   templateUrl: './news-page.component.html',
   styleUrl: './news-page.component.css'
 })
@@ -17,6 +18,7 @@ export class NewsPageComponent implements OnInit {
   news?: News[];
   errorMessage?: string
 
+  displayForm: boolean = false
   ngOnInit(): void {
     // this.newsService.getAllNews().subscribe((resp) => {
     //   console.log(resp);

@@ -1,5 +1,13 @@
 <section>
   <h1>Nos actualités</h1>
+  <div class="ml-auto mb-5 mr-5 w-fit">
+    <button (click)="displayForm = !displayForm" class="btn btn-primary">ajouter une actualité</button>
+  </div>
+
+  @if(displayForm){
+  <app-news-form />
+  }
+
   @if(news){
   <app-news-list [news]="news" />
   } @else if(errorMessage){
