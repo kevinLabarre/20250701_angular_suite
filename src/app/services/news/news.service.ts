@@ -17,19 +17,24 @@ export class NewsService {
     return this.http.get<News[]>(this.url)
   }
 
-
-  // 1. Implémenter la méthode getById(id: number)
-  // 2. Utiliser la méthode sur le composant "ActualiteDetailPageComponent" pour récupérer une actualité
-  //     -> s'aider de 'NewsPageComponent'
-  // 3. Afficher les données
-
-
-  // 4. Implementer le bouton 'lire la suite' pour qu'il redirige vers la page 'details-acutualité/id'
-  // 5. Lorsque on a une erreur (par exemple lorsque l'id n'existe pas), rediriger vers la page /actualité
-
   getById(id: number): Observable<News> {
     return this.http.get<News>(`${this.url}/${id}`)
   }
+
+
+  addNews(news: News): Observable<News> {
+    return this.http.post<News>(this.url, news)
+  }
+
+  // `${this.url}/${id}`  pour supprimer
+  delete(id: number): Observable<News> {
+    return this.http.delete<News>(`${this.url}/${id}`)
+  }
+
+
+
+
+
 
 
   // Pour test / simuler une erreur

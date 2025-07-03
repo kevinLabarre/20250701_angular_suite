@@ -4,6 +4,7 @@ import { NewsService } from '../../services/news/news.service';
 import { NewsCardComponent } from "../../components/news-card/news-card.component";
 import { News } from '../../interfaces/news.interface';
 import { HttpErrorResponse } from '@angular/common/http';
+import { ShareNewsService } from '../../services/shareNews/share-news.service';
 
 @Component({
   selector: 'app-actualite-detail-page',
@@ -18,16 +19,26 @@ export class ActualiteDetailPageComponent implements OnInit {
   news?: News;
   httpError?: Error
 
+
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private service: NewsService,
-    private router: Router
+    private router: Router,
+    private shareService: ShareNewsService
   ) {
     this.activatedRoute.params.subscribe((params) => this.id = params['id'])
   }
   ngOnInit(): void {
-    this.service.getError(this.id).subscribe({
-      next: (resp) => this.news = resp,
+    this.loadNews()
+  }
+
+  loadNews() {
+    this.service.getById(this.id).subscribe({
+      next: (resp) => {
+        this.news = resp
+        this.shareService.shareNews(resp)
+      },
       error: (err: HttpErrorResponse) => {
         this.httpError = err
         if (err.status == 404) {
@@ -36,6 +47,8 @@ export class ActualiteDetailPageComponent implements OnInit {
       }
     })
   }
+
+
 
 
 

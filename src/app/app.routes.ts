@@ -16,7 +16,7 @@ export const routes: Routes = [
 
 
       { path: "mise-a-jour", component: UpdateNewsComponent },
-      { path: "update", redirectTo: "mise-a-jour" },
+      { path: "update", redirectTo: "mise-a-jour" }, // Exemple de redirection
 
     ]
   },

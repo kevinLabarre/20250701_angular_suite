@@ -31,6 +31,10 @@ export class NewsPageComponent implements OnInit {
     // this.asyncLoadNews()
   }
 
+  handleDelete(id: number) {
+    this.news = this.news!.filter((n) => id != n.id)
+  }
+
   loadNews() {
     this.errorMessage = undefined
     this.news = undefined
@@ -45,6 +49,11 @@ export class NewsPageComponent implements OnInit {
     }).add(() => console.log("Requête terminée"))
   }
 
+  handleNewsAddedByFormChild(newsAdded: News) {
+    console.log(newsAdded)
+
+    this.news?.push(newsAdded)
+  }
 
 
 

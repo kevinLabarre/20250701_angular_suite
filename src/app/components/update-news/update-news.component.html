@@ -1,1 +1,43 @@
-<p>update-news works!</p>
+<section>
+  <h1>Mise à jour</h1>
+  @if(newsWihShareService){
+  <p>{{newsWihShareService.titre}}</p>
+  <form (ngSubmit)="handleUpdate()" [formGroup]="newsForm">
+
+    <div class="grid grid-cols-4">
+      <div>
+        <label>
+          <span>titre</span>
+        </label>
+        <input type="text" class="input input-bordered" formControlName="titre" />
+      </div>
+
+      <div>
+        <label>
+          <span>texte</span>
+        </label>
+        <input type="text" class="input input-bordered" formControlName="texte" />
+      </div>
+
+      <div>
+        <label>
+          <span>image</span>
+        </label>
+        <input type="text" class="input input-bordered" formControlName="image" />
+      </div>
+
+      <div>
+        <label>
+          <span>catégorie</span>
+        </label>
+        <input type="text" class="input input-bordered" formControlName="categorie" />
+      </div>
+
+      <div class="m-auto my-5 w-fit">
+        <button class="btn btn-warning">Mettre à jour</button>
+      </div>
+
+    </div>
+  </form>
+  }
+</section>

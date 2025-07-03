@@ -31,6 +31,10 @@
     <p class="line-clamp-3 flex-grow">{{ news().texte }}</p>
     <div class="card-actions justify-end mt-auto">
       <button [routerLink]="['/actualites', news().id]" class="btn btn-primary">Lire la suite</button>
+      <button (click)="handleClickDelete()" class="btn btn-error">
+        <ng-icon name="heroTrash" /> Supprimer
+      </button>
     </div>
+
   </div>
 </div>

@@ -5,11 +5,12 @@
   </div>
 
   @if(displayForm){
-  <app-news-form />
+  <!-- quand on utilise un @output, on doit utiliser le paramètre $event  -->
+  <app-news-form (newsAdded)="handleNewsAddedByFormChild($event)" />
   }
 
   @if(news){
-  <app-news-list [news]="news" />
+  <app-news-list [news]="news" (handleDelete)="handleDelete($event)" />
   } @else if(errorMessage){
   <p>si backend renvoie des messages d'erreurs directement affichable : {{errorMessage}}</p>
   <p>sinon, message en dure : Erreur de chargement des données</p>

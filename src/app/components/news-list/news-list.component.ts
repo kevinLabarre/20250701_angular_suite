@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { News } from '../../interfaces/news.interface';
 import { NewsCardComponent } from "../news-card/news-card.component";
 
@@ -10,4 +10,11 @@ import { NewsCardComponent } from "../news-card/news-card.component";
 })
 export class NewsListComponent {
   @Input({ required: true }) news: News[] = [];
+
+  @Output() handleDelete = new EventEmitter<number>()
+
+  handleDeleteEvent(id: number) {
+    this.handleDelete.emit(id)
+  }
+
 }
