@@ -36,7 +36,6 @@ export class ActualiteDetailPageComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.loadNews()
     this.subscription = this.shareService.newsShareByService$.subscribe(resp => this.news = resp)
-
   }
 
   loadNews() {
@@ -57,6 +56,5 @@ export class ActualiteDetailPageComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subscription.unsubscribe()
   }
-
 
 }

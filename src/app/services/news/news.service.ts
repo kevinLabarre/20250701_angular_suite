@@ -4,6 +4,7 @@ import { catchError, Observable, throwError } from 'rxjs';
 import { News } from '../../interfaces/news.interface';
 import { Validators } from '@angular/forms';
 import { NewsForm } from '../../interfaces/newsForm.interface';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,9 @@ export class NewsService {
 
   constructor(private http: HttpClient) { }
 
-  private url: string = "http://localhost:3000/actualites"  // + /ID
+  private baseUrl = environment.jsonServerUrl
+
+  private url: string = `${this.baseUrl}/actualites`  // + /ID
 
   getAllNews(): Observable<News[]> {
     return this.http.get<News[]>(this.url)

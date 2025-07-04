@@ -5,6 +5,9 @@ import { ActualiteDetailPageComponent } from './view/actualite-detail-page/actua
 import { NewsDescriptionComponent } from './components/news-description/news-description.component';
 import { UpdateNewsComponent } from './components/update-news/update-news.component';
 import { SignalPageComponent } from './view/signal-page/signal-page.component';
+import { AdminLayoutComponent } from './admin/layout/admin-layout/admin-layout.component';
+import { ADMIN_ROUTES } from './admin/routes/admin.routes';
+import { adminGuard } from './guards/admin.guard';
 
 export const routes: Routes = [
   { path: "", component: HomePageComponent, title: "Accueil" },
@@ -20,6 +23,17 @@ export const routes: Routes = [
 
     ]
   },
-  { path: 'signaux', component: SignalPageComponent, title: "Les signaux" }
+  { path: 'signaux', component: SignalPageComponent, title: "Les signaux" },
+
+
+  // Espace admin
+  {
+    path: 'admin', component: AdminLayoutComponent, children: ADMIN_ROUTES, canMatch: [adminGuard]
+  }
+
+  // Les guards : avec canMatch / canActivate
+  // --> Peut empêcher le chargement paresseux(lazy loading) d'un module avant même que la correspondance de route
+  // soit tentée
 
 ];
+
