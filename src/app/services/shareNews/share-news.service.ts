@@ -19,6 +19,9 @@ export class ShareNewsService {
     dateModification: new Date(),
   })
 
+
+
+
   newsShareByService$ = this.news.asObservable() // conversion en observable; pour manipuler plus facilement les abonnements côté composant
 
   shareNews(news: News) {

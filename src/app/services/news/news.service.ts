@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
 import { News } from '../../interfaces/news.interface';
 import { Validators } from '@angular/forms';
+import { NewsForm } from '../../interfaces/newsForm.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -32,9 +33,10 @@ export class NewsService {
   }
 
 
-
-
-
+  //
+  updateNews(id: number, news: NewsForm): Observable<News> {
+    return this.http.put<News>(`${this.url}/${id}`, news)
+  }
 
 
   // Pour test / simuler une erreur
