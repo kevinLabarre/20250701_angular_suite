@@ -9,20 +9,26 @@ import { AdminLayoutComponent } from './admin/layout/admin-layout/admin-layout.c
 import { ADMIN_ROUTES } from './admin/routes/admin.routes';
 import { adminGuard } from './guards/admin.guard';
 import { LoginPageComponent } from './view/login-page/login-page.component';
+import { provideClientHydration } from '@angular/platform-browser';
+import { ServerRoute } from '@angular/ssr';
+
 
 export const routes: Routes = [
   { path: "", component: HomePageComponent, title: "Accueil" },
   { path: "actualites", component: NewsPageComponent, title: "Actualites" },
-  {
-    path: "actualites/:id", component: ActualiteDetailPageComponent, title: "détails de l'actualité", children: [
-      { path: "", redirectTo: "description", pathMatch: "full" }, // Rediriger vers 'actualites/:id/description'  quand on arrive sur 'actualites/:id'
-      { path: "description", component: NewsDescriptionComponent },
+  // {
+  //   path: "actualites/:id",
+  //   component: ActualiteDetailPageComponent,
+  //   title: "détails de l'actualité",
+  //   children: [
+  //     { path: "", redirectTo: "description", pathMatch: "full" }, // Rediriger vers 'actualites/:id/description'  quand on arrive sur 'actualites/:id'
+  //     { path: "description", component: NewsDescriptionComponent },
 
 
-      { path: "mise-a-jour", loadComponent: () => import("./components/update-news/update-news.component").then(e => e.UpdateNewsComponent) }, // Avec lazyLoading
-      { path: "update", redirectTo: "mise-a-jour" }, // Exemple de redirection
-    ]
-  },
+  //     { path: "mise-a-jour", loadComponent: () => import("./components/update-news/update-news.component").then(e => e.UpdateNewsComponent) }, // Avec lazyLoading
+  //     { path: "update", redirectTo: "mise-a-jour" }, // Exemple de redirection
+  //   ]
+  // },
   { path: 'signaux', component: SignalPageComponent, title: "Les signaux" },
   { path: 'connexion', component: LoginPageComponent, title: "Connexion" },
 
