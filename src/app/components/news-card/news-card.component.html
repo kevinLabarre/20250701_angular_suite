@@ -29,6 +29,11 @@
   <div class="card-body flex flex-col flex-grow">
     <h2 class="card-title line-clamp-2">{{ news().titre }}</h2>
     <p class="line-clamp-3 flex-grow">{{ news().texte }}</p>
+    <p class="text-accent">Date de publication : {{news().datePublication | date: 'shortDate'}}</p>
+    <p class="text-accent">Date de publication : {{news().datePublication | myCustomDate }}</p>
+    @if(news().dateModification){
+    <p class="text-accent">Dernière modif : {{news().dateModification | date: 'dd MMMM yyyy' }}</p>
+    }
     <div class="card-actions justify-end mt-auto">
       <button [routerLink]="['/actualites', news().id]" class="btn btn-primary">Lire la suite</button>
       <button (click)="handleClickDelete()" class="btn btn-error">

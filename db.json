@@ -75,13 +75,13 @@
   ],
   "actualites": [
     {
-      "id": "1",
-      "categorie": "Investissement",
-      "titre": "La FakeBank lance un fonds d'investissement dans les mèmes",
+      "titre": "Mise à jour _ La FakeBank lance un fonds d'investissement dans les mèmes",
       "texte": "Notre équipe d'analystes a déterminé que les mèmes représentent désormais une classe d'actifs plus stable que l'immobilier. Investissez dès maintenant dans notre nouveau fonds 'MèmeStonks' et recevez un NFT gratuit de notre PDG qui fait un dab. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque ex error asperiores ipsa non, blanditiis quasi repellendus ad consequuntur facilis consequatur minima beatae quod cum, repudiandae earum nobis ipsum autem! Fugit voluptas harum magnam dolore omnis, aspernatur, sed tenetur, ullam sequi sapiente et officia? Esse aliquid quod enim quia autem minima iusto, minus cupiditate, soluta veritatis voluptate ducimus aut omnis! Reprehenderit eius optio necessitatibus quidem deserunt sapiente. Iure tempora maiores dolores sunt eos non doloribus voluptate deserunt possimus amet excepturi quidem, voluptatem assumenda rem provident eum laboriosam ducimus officiis mollitia. Consectetur animi magni aliquid corporis provident omnis voluptate quasi consequatur saepe dolores dicta voluptatibus, nam debitis cupiditate deserunt labore culpa eaque? Ducimus ad deleniti repudiandae dolorum consequuntur doloremque nesciunt commodi. Amet placeat temporibus repellat, consequatur cupiditate illum tempore aspernatur aliquid velit maiores corrupti repellendus dolore deleniti magnam sapiente voluptatum magni sunt totam unde accusamus nesciunt omnis! Omnis quam culpa qui?",
+      "image": "https://images.unsplash.com/photo-1640340434855-6084b1f4901c?q=80&w=800",
+      "categorie": "Investissement",
+      "id": "1",
       "datePublication": "2023-10-15",
-      "dateModification": "2023-10-16",
-      "image": "https://images.unsplash.com/photo-1640340434855-6084b1f4901c?q=80&w=800"
+      "dateModification": "2025-07-04T12:42:10.600Z"
     },
     {
       "id": "2",

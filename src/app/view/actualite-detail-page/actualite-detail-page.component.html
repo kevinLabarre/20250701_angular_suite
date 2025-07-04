@@ -2,6 +2,7 @@
   <h1>Détails actualités</h1>
   <p>Paramètre de l'url : {{id}}</p>
 
+
   @if(news){
   <div class="w-1/3 mt-5 m-auto">
     <app-news-card [news]="news" />
@@ -11,6 +12,9 @@
   } @else {
   <p>chargement ...</p>}
 
+
+  <p>Exemple du pipe json :</p>
+  <pre class="text-white bg-black">{{ news | json }}</pre>
 
   <div class="pt-5">
     <a routerLink="description" class="btn">Description</a>

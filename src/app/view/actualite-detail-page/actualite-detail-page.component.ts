@@ -6,10 +6,11 @@ import { News } from '../../interfaces/news.interface';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ShareNewsService } from '../../services/shareNews/share-news.service';
 import { Subscription } from 'rxjs';
+import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-actualite-detail-page',
-  imports: [RouterOutlet, RouterLink, NewsCardComponent],
+  imports: [RouterOutlet, RouterLink, NewsCardComponent, JsonPipe],
   templateUrl: './actualite-detail-page.component.html',
   styleUrl: './actualite-detail-page.component.css'
 })

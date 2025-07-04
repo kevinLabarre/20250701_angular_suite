@@ -8,6 +8,7 @@ import { SignalPageComponent } from './view/signal-page/signal-page.component';
 import { AdminLayoutComponent } from './admin/layout/admin-layout/admin-layout.component';
 import { ADMIN_ROUTES } from './admin/routes/admin.routes';
 import { adminGuard } from './guards/admin.guard';
+import { LoginPageComponent } from './view/login-page/login-page.component';
 
 export const routes: Routes = [
   { path: "", component: HomePageComponent, title: "Accueil" },
@@ -18,22 +19,28 @@ export const routes: Routes = [
       { path: "description", component: NewsDescriptionComponent },
 
 
-      { path: "mise-a-jour", component: UpdateNewsComponent },
+      { path: "mise-a-jour", loadComponent: () => import("./components/update-news/update-news.component").then(e => e.UpdateNewsComponent) }, // Avec lazyLoading
       { path: "update", redirectTo: "mise-a-jour" }, // Exemple de redirection
-
     ]
   },
   { path: 'signaux', component: SignalPageComponent, title: "Les signaux" },
+  { path: 'connexion', component: LoginPageComponent, title: "Connexion" },
 
 
   // Espace admin
   {
-    path: 'admin', component: AdminLayoutComponent, children: ADMIN_ROUTES, canMatch: [adminGuard]
-  }
+    // Guard n'empêche le chargement des modules pour le SSR , mm si la route est bloqué
+    path: 'admin',
+    component: AdminLayoutComponent, // Sans lazy loading. Pour du lazy loading, utiliser 'loadComponent'
+    loadChildren: () => import("./admin/routes/admin.routes").then(e => e.ADMIN_ROUTES),
+    canMatch: [adminGuard]  // Avec lazyLoading
+  },
 
   // Les guards : avec canMatch / canActivate
   // --> Peut empêcher le chargement paresseux(lazy loading) d'un module avant même que la correspondance de route
   // soit tentée
+
+  { path: '**', component: HomePageComponent, title: "Page introuvable" }, // Page 404
 
 ];
 

@@ -3,10 +3,12 @@ import { News } from '../../interfaces/news.interface';
 import { RouterLink } from '@angular/router';
 import { NgIcon } from '@ng-icons/core';
 import { NewsService } from '../../services/news/news.service';
+import { DatePipe } from '@angular/common';
+import { MyCustomDatePipe } from '../../pipes/Date/my-custom-date.pipe';
 
 @Component({
   selector: 'app-news-card',
-  imports: [RouterLink, NgIcon],
+  imports: [RouterLink, NgIcon, DatePipe, MyCustomDatePipe],
   templateUrl: './news-card.component.html',
   styleUrl: './news-card.component.css'
 })
